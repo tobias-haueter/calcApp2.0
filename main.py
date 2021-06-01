@@ -92,11 +92,11 @@ class Ui(QtWidgets.QMainWindow):
 
         # Buttons Temperature to Resistance
         self.BtnPt100_tempToRes = self.findChild(QtWidgets.QPushButton, 'BtnPt100_tempToRes')
-        self.BtnPt100_tempToRes.clicked.connect(self.calcPt100_tempToRes)  # QLineEdit returnPressed is assignet to click this button
+        self.BtnPt100_tempToRes.clicked.connect(self.calcPt100TempToRes)  # QLineEdit returnPressed is assignet to click this button
 
         # Buttons Resistance to Temperature
         self.BtnPt100_resToTemp = self.findChild(QtWidgets.QPushButton, 'BtnPt100_resToTemp')
-        self.BtnPt100_resToTemp.clicked.connect(self.calcPt100_resToTemp)  # QLineEdit returnPressed is assignet to click this button
+        self.BtnPt100_resToTemp.clicked.connect(self.calcPt100ResToTemp)  # QLineEdit returnPressed is assignet to click this button
 
         ## show MainWindows
         self.show()
@@ -137,7 +137,7 @@ class Ui(QtWidgets.QMainWindow):
         #self.errorMsgInput()
         self.VarCondSignalConverter()
         # call extern script
-        calcSP(self)
+        calc_SP(self)
 
     def calcPS(self): # Button and returnPressed action
         ## Input check
@@ -145,22 +145,22 @@ class Ui(QtWidgets.QMainWindow):
         ## Var conditioning
         self.VarCondSignalConverter()
         # call extern script
-        calcPS(self)
+        calc_PS(self)
 
 
 
-    def calcPt100_tempToRes(self):
+    def calcPt100TempToRes(self):
         self.VarCondPt100()
         #self.errorMsgInput()
         # call extern script
-        calcPt100ToRes(self)
+        self.pt100ResOut.setText(str(calcPt100_TempToRes(self.pt100_tIN)))
 
 
-    def calcPt100_resToTemp(self):
+    def calcPt100ResToTemp(self):
         self.VarCondPt100()
         #self.errorMsgInput()
         # call extern script
-        calcPt100ToTemp(self)
+        self.pt100TempOut.setText(str(calcPt100_ResToTemp(self.pt100_rIN)))
 
 
 
