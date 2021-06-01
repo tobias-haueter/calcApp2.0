@@ -25,7 +25,8 @@
 import sys
 from math import *
 from PyQt5 import QtWidgets, uic, QtGui
-from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow, QMessageBox, QPushButton, QWidget
+from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow, QMessageBox, QPushButton, QWidget, QLineEdit
+from PyQt5.QtGui import QIntValidator,QDoubleValidator,QFont
 from calc import *
 from UliEngineering.Physics.RTD import pt100_temperature, pt100_resistance
 
@@ -43,27 +44,34 @@ class Ui(QtWidgets.QMainWindow):
         ## BIO SignalConverter
 
         # Signal Range Low Input
-        self.srLowInput01 = self.findChild(QtWidgets.QLineEdit, 'srLowInput') # Find the item
+        sc01 = self.srLowInput01 = self.findChild(QtWidgets.QLineEdit, 'srLowInput') # Find the item
+        sc01.setValidator(QDoubleValidator(-1000000, 1000000, 4)) # Input Validator
 
         # Signal Range High Input
-        self.srHighInput02 = self.findChild(QtWidgets.QLineEdit, 'srHighInput') # Find the item
+        sc02 = self.srHighInput02 = self.findChild(QtWidgets.QLineEdit, 'srHighInput') # Find the item
+        sc02.setValidator(QDoubleValidator(-1000000, 1000000, 4)) # Input Validator
 
         # Physical Range Low Input
-        self.prLowInput03 = self.findChild(QtWidgets.QLineEdit, 'prLowInput') # Find the item
+        sc03 = self.prLowInput03 = self.findChild(QtWidgets.QLineEdit, 'prLowInput') # Find the item
+        sc03.setValidator(QDoubleValidator(-1000000, 1000000, 4)) # Input Validator
 
         # Physical Range High Input
-        self.prHighInput04 = self.findChild(QtWidgets.QLineEdit, 'prHighInput') # Find the item
+        sc04 = self.prHighInput04 = self.findChild(QtWidgets.QLineEdit, 'prHighInput') # Find the item
+        sc04.setValidator(QDoubleValidator(-1000000, 1000000, 4)) # Input Validator
 
         # Calculation I/O SR -> PR
         # Signal Range to Physical Range Calculation Input
-        self.srToPrInput05 = self.findChild(QtWidgets.QLineEdit, 'srToPrCalcInput') # Find the item
+        sc05 = self.srToPrInput05 = self.findChild(QtWidgets.QLineEdit, 'srToPrCalcInput') # Find the item
+        sc05.setValidator((QDoubleValidator(-1000000, 1000000, 4))) # Input Validator
+
 
         # Signal Range to Physical Range Calculation Output
         self.srToPrOutput06 = self.findChild(QtWidgets.QLabel, 'srToPrCalcOutput')  # Find the item
 
         # Calculation I/O PR -> SR
         # Physical Range to Signal Range Calculation Input
-        self.prToSrInput07 = self.findChild(QtWidgets.QLineEdit, 'prToSrCalcInput') # Find the item
+        sc06 = self.prToSrInput07 = self.findChild(QtWidgets.QLineEdit, 'prToSrCalcInput') # Find the item
+        sc06.setValidator(QDoubleValidator(-1000000, 1000000, 4)) # Input Validator
 
         # Physical Range to Signal Range Calculation Output
         self.prToSrOutput08 = self.findChild(QtWidgets.QLabel, 'prToSrCalcOutput') # Find the item
@@ -79,13 +87,16 @@ class Ui(QtWidgets.QMainWindow):
         ## BIO PT100
 
         # PT100 Temp In
-        self.pt100TempIn = self.findChild(QtWidgets.QLineEdit, 'pt100TempIn') # Find the item
+        pt01 = self.pt100TempIn = self.findChild(QtWidgets.QLineEdit, 'pt100TempIn') # Find the item
+        pt01.setValidator(QDoubleValidator(-280,1000,12)) # Input Validator
 
         # PT100 Temp Out
         self.pt100ResOut = self.findChild(QtWidgets.QLabel, 'pt100ResOut') # Find the item
 
         # PT100 Resistance In
-        self.pt100ResIn = self.findChild(QtWidgets.QLineEdit, 'pt100ResIn') # Find the item
+        pt02 = self.pt100ResIn = self.findChild(QtWidgets.QLineEdit, 'pt100ResIn') # Find the item
+        pt02.setValidator(QDoubleValidator(0,400,12)) # Input Validator
+
 
         # PT100 Resistance Out
         self.pt100TempOut = self.findChild(QtWidgets.QLabel, 'pt100TempOut') # Find the item
@@ -101,6 +112,7 @@ class Ui(QtWidgets.QMainWindow):
         ## show MainWindows
         self.show()
 
+        #-------------------------------------------------------------------------
 
         ## Var Storage; Calc/Conditioning Signal Converter
         self.srLowIn = 0
@@ -170,6 +182,12 @@ class Ui(QtWidgets.QMainWindow):
     def VarCondPt100(self):
         self.pt100_tIN = float(self.pt100TempIn.text())
         self.pt100_rIN = float(self.pt100ResIn.text())
+
+
+    def inputValitation(var):
+        # QValidator
+        # ReGex
+        pass
 
 
     def errorMsgInput(self):

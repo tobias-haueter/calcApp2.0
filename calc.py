@@ -3,17 +3,13 @@ from math import *
 
 def calc_PS(srLowIn, srHighIn, prLowIn, prHighIn, srCalcIn, prCalcIn):  # Button and returnPressed action
     ## Calculation PR -> SR
-    psOutput = (((prCalcIn - srLowIn) * (prHighIn - prLowIn)) / (srHighIn - srLowIn)) + prLowIn
+    psOutput = ((srHighIn - srLowIn) / (prHighIn - prLowIn) * (prCalcIn - prLowIn)) + srLowIn
     return psOutput
-    #self.prToSrOutput08.setText(str(srOutput))
-    #print(srOutput + 'OK')
 
 
 def calc_SP(srLowIn, srHighIn, prLowIn, prHighIn, srCalcIn, prCalcIn):  # Button and returnPressed action
     ## Calculation SR -> PR
-
-    spOutput = ((srHighIn - srLowIn) / (prHighIn - prLowIn) * (srCalcIn - prLowIn)) + srLowIn
-    print('calc_SP => OK')
+    spOutput = (((srCalcIn - srLowIn) * (prHighIn - prLowIn)) / (srHighIn - srLowIn)) + prLowIn
     return spOutput
 
 
