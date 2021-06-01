@@ -28,6 +28,7 @@ from PyQt5 import QtWidgets, uic, QtGui
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow, QMessageBox, QPushButton, QWidget
 from calc import *
 from cmath import sqrt
+from UliEngineering.Physics.RTD import pt100_temperature, pt100_resistance
 
 # Load the UI file
 # https://www.programcreek.com/python/example/96001/PyQt5.uic.loadUi

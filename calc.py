@@ -22,17 +22,16 @@ def calc_SP(self):  # Button and returnPressed action
 
 
 
-def calcPt100_ResToTemp(temperatureIn):
+def calcPt100_ResToTemp(resistanceIn):
     print('calcPt100ToRes -> OK')
-    # Calculate temperature with the calculation when temp equal or upper than 0°C
-    return pt100_resistance({temperatureIn})
-
-
-def calcPt100_TempToRes(resistanceIn):
-    print('calcPt100ToTemp -> OK')
     # Calculate temperature with the calculation when temp equal or upper than 0°C
     return pt100_temperature({resistanceIn})
 
+
+def calcPt100_TempToRes(temperaturIn):
+    print('calcPt100ToTemp -> OK')
+    # Calculate temperature with the calculation when temp equal or upper than 0°C
+    return pt100_resistance({temperaturIn})
 
 
 
