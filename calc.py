@@ -1,37 +1,32 @@
-from math import *
 from UliEngineering.Physics.RTD import pt100_temperature, pt100_resistance
+from math import *
 
-def calc_PS(self):  # Button and returnPressed action
+def calc_PS(srLowIn, srHighIn, prLowIn, prHighIn, srCalcIn, prCalcIn):  # Button and returnPressed action
     ## Calculation PR -> SR
-    srOutput = ((self.srHighIn - self.srLowIn) / (self.prHighIn - self.prLowIn) * (
-            self.prCalcIn - self.prLowIn)) + self.srLowIn
-    self.prToSrOutput08.setText(str(srOutput))
-    print(srOutput)
+    psOutput = (((prCalcIn - srLowIn) * (prHighIn - prLowIn)) / (srHighIn - srLowIn)) + prLowIn
+    return psOutput
+    #self.prToSrOutput08.setText(str(srOutput))
+    #print(srOutput + 'OK')
 
 
-def calc_SP(self):  # Button and returnPressed action
+def calc_SP(srLowIn, srHighIn, prLowIn, prHighIn, srCalcIn, prCalcIn):  # Button and returnPressed action
     ## Calculation SR -> PR
-    # prOutput = (((srCalcIn - srLowIn) * (prHighIn - prLowIn)) / (srHighIn - srLowIn)) + prLowIn
-    prOutput = (((self.srCalcIn - self.srLowIn) * (self.prHighIn - self.prLowIn)) / (
-            self.srHighIn - self.srLowIn)) + self.prLowIn
-    self.srToPrOutput06.setText(str(prOutput))
-    print(prOutput)
 
-
-
-
+    spOutput = ((srHighIn - srLowIn) / (prHighIn - prLowIn) * (srCalcIn - prLowIn)) + srLowIn
+    print('calc_SP => OK')
+    return spOutput
 
 
 def calcPt100_ResToTemp(resistanceIn):
-    print('calcPt100ToRes -> OK')
-    # Calculate temperature with the calculation when temp equal or upper than 0°C
-    return pt100_temperature({resistanceIn})
+    print('calcPt100_ResToTemp -> OK')
+    # Calculate temperature with UliEngineering RTD script
+    return pt100_temperature(resistanceIn)
 
 
 def calcPt100_TempToRes(temperaturIn):
-    print('calcPt100ToTemp -> OK')
-    # Calculate temperature with the calculation when temp equal or upper than 0°C
-    return pt100_resistance({temperaturIn})
+    print('calcPt100_TempToRes -> OK')
+    # Calculate temperature with UliEngineering RTD script
+    return pt100_resistance(temperaturIn)
 
 
 

@@ -122,7 +122,7 @@ color: rgb(78, 154, 6);
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="SignalConverter">
      <attribute name="title">
@@ -162,61 +162,7 @@ color: rgb(78, 154, 6);
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>150</y>
-        <width>41</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>=&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>210</y>
-        <width>35</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>&lt;=</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>21</x>
@@ -246,7 +192,7 @@ color: rgb(78, 154, 6);
           <string notr="true">color: rgb(238, 238, 236);</string>
          </property>
          <property name="text">
-          <string>|-Physical Range-----------------------&gt;|</string>
+          <string>|-Physical Range------------------------&gt;|</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -333,7 +279,7 @@ color: rgb(78, 154, 6);</string>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -448,7 +394,7 @@ color: rgb(78, 154, 6);
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -459,7 +405,7 @@ color: rgb(78, 154, 6);
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_9">
        <item>
-        <widget class="QPushButton" name="BtnSP">
+        <widget class="QPushButton" name="BtnPS">
          <property name="enabled">
           <bool>true</bool>
          </property>
@@ -479,76 +425,6 @@ color: rgb(78, 154, 6);
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QLineEdit" name="srToPrCalcInput">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(39, 39, 39);
-color: rgb(78, 154, 6);</string>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QLabel" name="prToSrCalcOutput">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>210</y>
-        <width>53</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(206, 92, 0);</string>
-      </property>
-      <property name="text">
-       <string>Result</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="textInteractionFlags">
-       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-      </property>
-     </widget>
-     <widget class="QWidget" name="">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>210</y>
-        <width>262</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
        <item>
         <widget class="QLineEdit" name="prToSrCalcInput">
          <property name="sizePolicy">
@@ -571,8 +447,78 @@ color: rgb(78, 154, 6);</string>
          </property>
         </widget>
        </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="srToPrCalcOutput">
+      <property name="geometry">
+       <rect>
+        <x>22</x>
+        <y>210</y>
+        <width>281</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Nirmala UI</family>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(206, 92, 0);</string>
+      </property>
+      <property name="text">
+       <string>Result</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>210</y>
+        <width>262</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
        <item>
-        <widget class="QPushButton" name="BtnPS">
+        <widget class="QLineEdit" name="srToPrCalcInput">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(39, 39, 39);
+color: rgb(78, 154, 6);</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="BtnSP">
          <property name="font">
           <font>
            <family>Nirmala UI</family>
@@ -591,12 +537,12 @@ color: rgb(78, 154, 6);</string>
        </item>
       </layout>
      </widget>
-     <widget class="QLabel" name="srToPrCalcOutput">
+     <widget class="QLabel" name="prToSrCalcOutput">
       <property name="geometry">
        <rect>
         <x>380</x>
         <y>150</y>
-        <width>53</width>
+        <width>271</width>
         <height>31</height>
        </rect>
       </property>
@@ -609,9 +555,9 @@ color: rgb(78, 154, 6);</string>
       <property name="font">
        <font>
         <family>Nirmala UI</family>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -626,6 +572,73 @@ color: rgb(78, 154, 6);</string>
       <property name="textInteractionFlags">
        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
       </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>150</y>
+        <width>42</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>=&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_13">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>&lt;=</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="PT100">
@@ -649,10 +662,10 @@ color: rgb(78, 154, 6);</string>
       </property>
       <property name="font">
        <font>
-        <family>Free Courier</family>
+        <family>Nirmala UI</family>
         <pointsize>20</pointsize>
         <weight>75</weight>
-        <italic>true</italic>
+        <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
@@ -671,8 +684,8 @@ color: rgb(78, 154, 6);</string>
        <rect>
         <x>10</x>
         <y>80</y>
-        <width>611</width>
-        <height>91</height>
+        <width>666</width>
+        <height>112</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -686,7 +699,7 @@ color: rgb(78, 154, 6);</string>
               <bool>true</bool>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(211, 215, 207);
+              <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
              </property>
              <property name="text">
@@ -712,7 +725,7 @@ color: rgb(0, 0, 0);</string>
 color: rgb(78, 154, 6);</string>
              </property>
              <property name="text">
-              <string>100</string>
+              <string>25</string>
              </property>
             </widget>
            </item>
@@ -730,10 +743,10 @@ color: rgb(78, 154, 6);</string>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: rgb(206, 92, 0);</string>
+              <string notr="true">color: rgb(78, 154, 6);</string>
              </property>
              <property name="text">
-              <string>[°C]</string>
+              <string>°C</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -786,14 +799,15 @@ color: rgb(78, 154, 6);</string>
              </property>
              <property name="font">
               <font>
-               <pointsize>14</pointsize>
+               <family>Nirmala UI</family>
+               <pointsize>16</pointsize>
               </font>
              </property>
              <property name="styleSheet">
               <string notr="true">color: rgb(206, 92, 0);</string>
              </property>
              <property name="text">
-              <string>Result</string>
+              <string>-10.21908698</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -820,7 +834,7 @@ color: rgb(78, 154, 6);</string>
               <string notr="true">color: rgb(206, 92, 0);</string>
              </property>
              <property name="text">
-              <string>[°C]</string>
+              <string>°C</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -843,14 +857,14 @@ color: rgb(78, 154, 6);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>11</pointsize>
+             <pointsize>18</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>|----------&gt;</string>
+            <string>=&gt;</string>
            </property>
           </widget>
          </item>
@@ -883,14 +897,14 @@ color: rgb(78, 154, 6);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>11</pointsize>
+             <pointsize>18</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>&lt;----------|</string>
+            <string>&lt;=</string>
            </property>
           </widget>
          </item>
@@ -910,14 +924,15 @@ color: rgb(78, 154, 6);</string>
              </property>
              <property name="font">
               <font>
-               <pointsize>14</pointsize>
+               <family>Nirmala UI</family>
+               <pointsize>16</pointsize>
               </font>
              </property>
              <property name="styleSheet">
               <string notr="true">color: rgb(206, 92, 0);</string>
              </property>
              <property name="text">
-              <string>Result</string>
+              <string>109.73465625</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -944,10 +959,13 @@ color: rgb(78, 154, 6);</string>
               <string notr="true">color: rgb(206, 92, 0);</string>
              </property>
              <property name="text">
-              <string>[Ohm]</string>
+              <string>Ω</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="textInteractionFlags">
+              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
              </property>
             </widget>
            </item>
@@ -1005,7 +1023,10 @@ color: rgb(78, 154, 6);</string>
 color: rgb(78, 154, 6);</string>
              </property>
              <property name="text">
-              <string>100</string>
+              <string>96</string>
+             </property>
+             <property name="placeholderText">
+              <string/>
              </property>
             </widget>
            </item>
@@ -1023,10 +1044,10 @@ color: rgb(78, 154, 6);</string>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">color: rgb(206, 92, 0);</string>
+              <string notr="true">color: rgb(78, 154, 6);</string>
              </property>
              <property name="text">
-              <string>[Ohm]</string>
+              <string>Ω</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1036,7 +1057,7 @@ color: rgb(78, 154, 6);</string>
            <item>
             <widget class="QPushButton" name="BtnPt100_resToTemp">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(211, 215, 207);
+              <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
              </property>
              <property name="text">
@@ -1060,16 +1081,16 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="poweredBy_2">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>480</x>
       <y>80</y>
-      <width>171</width>
+      <width>231</width>
       <height>20</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>MV Boli</family>
-      <pointsize>8</pointsize>
+      <pointsize>12</pointsize>
       <weight>50</weight>
       <bold>false</bold>
      </font>
@@ -1159,9 +1180,9 @@ color: rgb(0, 0, 0);</string>
  <resources/>
  <connections>
   <connection>
-   <sender>srToPrCalcInput</sender>
+   <sender>prToSrCalcInput</sender>
    <signal>returnPressed()</signal>
-   <receiver>BtnSP</receiver>
+   <receiver>BtnPS</receiver>
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1175,9 +1196,9 @@ color: rgb(0, 0, 0);</string>
    </hints>
   </connection>
   <connection>
-   <sender>prToSrCalcInput</sender>
+   <sender>srToPrCalcInput</sender>
    <signal>returnPressed()</signal>
-   <receiver>BtnPS</receiver>
+   <receiver>BtnSP</receiver>
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">

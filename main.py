@@ -27,7 +27,6 @@ from math import *
 from PyQt5 import QtWidgets, uic, QtGui
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow, QMessageBox, QPushButton, QWidget
 from calc import *
-from cmath import sqrt
 from UliEngineering.Physics.RTD import pt100_temperature, pt100_resistance
 
 # Load the UI file
@@ -103,7 +102,6 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
 
 
-
         ## Var Storage; Calc/Conditioning Signal Converter
         self.srLowIn = 0
         self.srHighIn = 0
@@ -119,52 +117,42 @@ class Ui(QtWidgets.QMainWindow):
         self.pt100_tIN = 0
 
 
-    def errorMsgInput(self):
-        ## Input Error Msg
-        dlg = QMessageBox(self)
-        dlg.setWindowIcon(QtGui.QIcon("warning.ico"))
-        dlg.setStyleSheet("background-color: white; "
-                          "color: black"
-                          )
-        dlg.setWindowTitle("Error Input")
-        dlg.setText("Input is not valid")
-        button = dlg.exec()
-
-        if button == QMessageBox.Ok:
-            print("OK!")
-
-
     def calcSP(self): # Button and returnPressed action
         #self.errorMsgInput()
         self.VarCondSignalConverter()
         # call extern script
-        calc_SP(self)
+        resultSP = calc_SP(self.srLowIn, self.srHighIn, self.prLowIn, self.prHighIn, self.srCalcIn, self.prCalcIn)
+        self.srToPrOutput06.setText(f'{resultSP}')
+        print(resultSP)
+        print('calcSP => OK!')
+
 
     def calcPS(self): # Button and returnPressed action
-        ## Input check
         #self.errorMsgInput()
-        ## Var conditioning
         self.VarCondSignalConverter()
         # call extern script
-        calc_PS(self)
-
+        resultPS = calc_PS(self.srLowIn, self.srHighIn, self.prLowIn, self.prHighIn, self.srCalcIn, self.prCalcIn)
+        self.prToSrOutput08.setText((f'{resultPS}'))
+        print(resultPS)
+        print('calcPS => OK!')
 
 
     def calcPt100TempToRes(self):
         self.VarCondPt100()
         #self.errorMsgInput()
         # call extern script
-        self.pt100ResOut.setText(str(calcPt100_TempToRes(self.pt100_tIN)))
+        resistance = calcPt100_TempToRes(self.pt100_tIN)
+        self.pt100ResOut.setText(f'{resistance}')
+        #self.pt100ResOut.setText(str(calcPt100_TempToRes(self.pt100_tIN)))
 
 
     def calcPt100ResToTemp(self):
         self.VarCondPt100()
         #self.errorMsgInput()
         # call extern script
-        self.pt100TempOut.setText(str(calcPt100_ResToTemp(self.pt100_rIN)))
-
-
-
+        temperature = calcPt100_ResToTemp(self.pt100_rIN)
+        self.pt100TempOut.setText(f'{temperature}')
+        #self.pt100TempOut.setText(str(calcPt100_ResToTemp(self.pt100_rIN)))
 
 
     def VarCondSignalConverter(self):
@@ -176,10 +164,26 @@ class Ui(QtWidgets.QMainWindow):
         self.srCalcOut = float(0)
         self.prCalcIn = float(self.prToSrInput07.text())
         self.prCalcOut = float(0)
+        print('VarCondSignalConverter => OK!')
+
 
     def VarCondPt100(self):
         self.pt100_tIN = float(self.pt100TempIn.text())
         self.pt100_rIN = float(self.pt100ResIn.text())
+
+
+    def errorMsgInput(self):
+        ## Input Error Msg
+        dlg = QMessageBox(self)
+        dlg.setWindowIcon(QtGui.QIcon("warning.ico"))
+        dlg.setStyleSheet("background-color: white; "
+                          "color: black"
+                          )
+        dlg.setWindowTitle("Error Input")
+        dlg.setText("Input is not valid")
+        button = dlg.exec()
+        if button == QMessageBox.Ok:
+            print("OK!")
 
 
 app = QtWidgets.QApplication(sys.argv) # Create an instance of QtWidgets.QApplication
