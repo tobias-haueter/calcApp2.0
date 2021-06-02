@@ -39,6 +39,7 @@ class Ui(QtWidgets.QMainWindow):
         QtWidgets.QWidget.__init__(self)
         #uic.loadUi('calcAppUI_linux.ui', self) # Load the .ui file
         uic.loadUi('calcAppUI_win.ui', self) # Load the .ui file
+        self.setWindowIcon(QtGui.QIcon('img/favicon_01.png'))
 
         ### Pointing GUI Elements
 
