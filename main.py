@@ -5,7 +5,8 @@
 # ---------------------------------------------------------------------------------
 # File: main.py
 # SubFile: calcAppUI_win.ui
-# Description:  Application for calculate in the Daily business of automation.
+# Description:  Swiss Army Knife for the PLC automation engineer in the field.
+# Various calculations for PT100, sensor signals etc...
 #
 # https://www.programcreek.com/python/
 #
